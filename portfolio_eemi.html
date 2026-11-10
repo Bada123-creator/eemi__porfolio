@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<style>
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+body { margin:0; font-family: Arial, Helvetica, sans-serif; color:#10243e; background:#eef4f8; }
+.page { width:210mm; height:297mm; padding:18mm 18mm 15mm 18mm; position:relative; background:white; page-break-after:always; overflow:hidden; }
+.page:last-child { page-break-after:auto; }
+.hero { background: linear-gradient(135deg,#0e2747 0%, #153d69 62%, #0d6b80 100%); color:white; }
+.hero:after { content:""; position:absolute; right:-45mm; top:-35mm; width:125mm; height:125mm; border-radius:50%; background:rgba(255,255,255,.07); }
+.hero:before { content:""; position:absolute; left:-35mm; bottom:-45mm; width:115mm; height:115mm; border-radius:50%; background:rgba(255,255,255,.05); }
+.kicker { font-size:11px; font-weight:700; letter-spacing:2.4px; color:#6fe1ed; text-transform:uppercase; }
+h1 { font-size:33px; line-height:1.05; margin:12px 0 8px; letter-spacing:.5px; }
+.subtitle { font-size:18px; line-height:1.35; max-width:145mm; color:#dcecf5; }
+.heroCard { margin-top:27mm; background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.18); border-radius:18px; padding:18px 20px; max-width:155mm; }
+.heroCard p { font-size:15px; line-height:1.55; margin:0; color:#f4fbff; }
+.heroLinks { margin-top:18mm; display:grid; gap:9px; }
+.heroLinks a { color:white; text-decoration:none; font-size:12px; background:rgba(255,255,255,.11); border:1px solid rgba(255,255,255,.18); border-radius:10px; padding:9px 12px; display:block; width:150mm; }
+.heroLinks b { color:#6fe1ed; }
+.footer { position:absolute; left:18mm; right:18mm; bottom:9mm; display:flex; justify-content:space-between; align-items:center; font-size:9px; color:#7b8ea1; }
+.hero .footer { color:#b9cfda; }
+.sectionTitle { font-size:21px; margin:0 0 4px; color:#0e2747; }
+.sectionLead { font-size:11.5px; color:#5b6f82; margin-bottom:12mm; }
+.rule { width:24mm; height:3px; background:#22a5b8; border-radius:2px; margin:8px 0 14px; }
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.card { border:1px solid #d9e5ec; border-radius:14px; padding:14px; background:#f9fbfc; }
+.card h3 { margin:0 0 7px; font-size:14px; color:#0e2747; }
+.card p { margin:0; font-size:10.5px; line-height:1.45; color:#42586b; }
+.chips { margin-top:9px; display:flex; flex-wrap:wrap; gap:5px; }
+.chip { font-size:8.7px; font-weight:700; color:#0e5d70; background:#dff5f8; border-radius:999px; padding:4px 7px; }
+.callout { background:#0e2747; color:white; border-radius:16px; padding:14px 16px; margin-top:12mm; }
+.callout h3 { margin:0 0 6px; font-size:15px; }
+.callout p { margin:0; color:#dcecf5; font-size:10.8px; line-height:1.5; }
+.projectHero { background:linear-gradient(135deg,#f0fbfc,#eef4fb); border:1px solid #d8e9ef; border-radius:18px; padding:16px; }
+.projectHero h2 { margin:0; font-size:24px; color:#0e2747; }
+.projectHero .desc { font-size:11.2px; color:#4d6275; margin:8px 0 12px; line-height:1.5; }
+.metricGrid { display:grid; grid-template-columns:repeat(4,1fr); gap:7px; }
+.metric { background:white; border:1px solid #dfe8ee; border-radius:11px; padding:9px; }
+.metric b { display:block; font-size:10px; color:#0e2747; margin-bottom:3px; }
+.metric span { font-size:8.7px; color:#5f7384; }
+.bullets { margin:12px 0 0 0; padding-left:18px; }
+.bullets li { margin:0 0 6px; font-size:10.6px; line-height:1.4; color:#334b5f; }
+.linkBox { margin-top:12px; border-radius:12px; background:#0e2747; padding:12px 14px; color:white; }
+.linkBox .label { font-size:9px; color:#73dce6; font-weight:700; text-transform:uppercase; letter-spacing:1px; }
+.linkBox a { color:white; text-decoration:none; font-size:10.2px; display:block; margin-top:5px; word-break:break-all; }
+.projects { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.projectCard { border:1px solid #dbe7ed; border-radius:14px; padding:13px; min-height:58mm; }
+.projectCard h3 { margin:0 0 4px; font-size:14px; }
+.projectCard .type { font-size:8.5px; font-weight:700; color:#1a8091; text-transform:uppercase; letter-spacing:.7px; margin-bottom:7px; }
+.projectCard p { font-size:10px; color:#42586b; line-height:1.45; margin:0 0 8px; }
+.projectCard a { color:#0b6f83; font-weight:700; text-decoration:none; font-size:9.3px; word-break:break-all; }
+.contactPanel { margin-top:11mm; background:#eef7f9; border-left:5px solid #22a5b8; padding:12px 14px; border-radius:10px; }
+.contactPanel h3 { margin:0 0 6px; font-size:14px; }
+.contactPanel p, .contactPanel a { font-size:10.2px; line-height:1.5; color:#30485c; text-decoration:none; }
+.smallNote { font-size:8.8px; color:#7a8c9b; margin-top:4px; }
+</style>
+</head>
+<body>
+<section class="page hero">
+  <div class="kicker">Portfolio candidature - EEMI Lyon</div>
+  <h1>BADA DIOP</h1>
+  <div class="subtitle">Développement Full Stack · Backend · Data · IA appliquée</div>
+
+  <div class="heroCard">
+    <p>Je conçois des applications web en combinant développement backend, interfaces modernes, bases de données et intégration progressive de fonctionnalités d'intelligence artificielle. Mon objectif : évoluer vers un profil de développeur capable de concevoir, tester, déployer et faire évoluer une solution complète.</p>
+  </div>
+
+  <div class="heroLinks">
+    <a href="https://github.com/Bada123-creator"><b>GitHub</b> — github.com/Bada123-creator</a>
+    <a href="mailto:bada46218@gmail.com"><b>Email</b> — bada46218@gmail.com</a>
+    <a href="tel:+33759445649"><b>Téléphone</b> — 07 59 44 56 49</a>
+  </div>
+
+  <div class="footer"><span>Candidature Mastère Lead Développeur & IA No Code</span><span>1 / 4</span></div>
+</section>
+
+<section class="page">
+  <div class="kicker">Profil & compétences</div>
+  <h2 class="sectionTitle">Un profil MIAGE orienté développement et projets concrets</h2>
+  <div class="rule"></div>
+  <div class="sectionLead">Licence MIASHS parcours MIAGE · développement logiciel · systèmes d'information · données</div>
+
+  <div class="grid2">
+    <div class="card"><h3>Backend</h3><p>Python, Django, Django REST Framework, API REST, authentification JWT.</p><div class="chips"><span class="chip">Python</span><span class="chip">Django</span><span class="chip">DRF</span><span class="chip">REST</span></div></div>
+    <div class="card"><h3>Frontend</h3><p>JavaScript, TypeScript, Next.js, React, HTML/CSS et Bootstrap.</p><div class="chips"><span class="chip">JS</span><span class="chip">TS</span><span class="chip">Next.js</span><span class="chip">React</span></div></div>
+    <div class="card"><h3>Données</h3><p>SQL, PostgreSQL, MySQL, MCD/MLD, structuration et qualité des données.</p><div class="chips"><span class="chip">SQL</span><span class="chip">PostgreSQL</span><span class="chip">MySQL</span></div></div>
+    <div class="card"><h3>Outils & qualité</h3><p>Git/GitHub, Docker, Render, Vercel, Linux, CMake, GTest, GCOV/LCOV.</p><div class="chips"><span class="chip">Git</span><span class="chip">Docker</span><span class="chip">Tests</span><span class="chip">Linux</span></div></div>
+    <div class="card"><h3>Data / IA</h3><p>Pandas, intégration d'API, notions d'IA générative, graphes avec NetworkX.</p><div class="chips"><span class="chip">Pandas</span><span class="chip">API</span><span class="chip">IA</span><span class="chip">NetworkX</span></div></div>
+    <div class="card"><h3>Approche projet</h3><p>Analyse du besoin, modélisation, développement, tests, déploiement et amélioration continue.</p><div class="chips"><span class="chip">Agilité</span><span class="chip">SI</span><span class="chip">Déploiement</span></div></div>
+  </div>
+
+  <div class="callout">
+    <h3>Pourquoi l'EEMI ?</h3>
+    <p>Je recherche une formation très pratique où les projets servent de moteur d'apprentissage. Le Mastère Lead Développeur & IA No Code correspond à mon objectif : consolider mon niveau full stack, structurer mes méthodes de développement et utiliser l'IA comme un outil d'ingénierie lorsque cela apporte une vraie valeur.</p>
+  </div>
+  <div class="footer"><span>Bada DIOP · Portfolio EEMI Lyon</span><span>2 / 4</span></div>
+</section>
+
+<section class="page">
+  <div class="kicker">Projet principal</div>
+  <div class="projectHero">
+    <h2>CareerAI</h2>
+    <div class="desc">Plateforme full stack d'aide à la recherche d'emploi : gestion des candidatures, données utilisateurs/offres, analyse de CV et intégration progressive de fonctionnalités d'IA.</div>
+    <div class="metricGrid">
+      <div class="metric"><b>Frontend</b><span>Next.js + TypeScript</span></div>
+      <div class="metric"><b>API</b><span>Django REST Framework</span></div>
+      <div class="metric"><b>Données</b><span>PostgreSQL</span></div>
+      <div class="metric"><b>Auth</b><span>JWT</span></div>
+    </div>
+  </div>
+
+  <ul class="bullets">
+    <li>Architecture séparant clairement le frontend et le backend.</li>
+    <li>API REST et structuration des données utilisateurs, offres et candidatures.</li>
+    <li>Authentification JWT avec access token et refresh token.</li>
+    <li>Déploiement du backend sur Render et du frontend sur Vercel.</li>
+    <li>Évolution du projet vers l'analyse de CV/offres, le matching et l'assistance par IA.</li>
+  </ul>
+
+  <div class="linkBox">
+    <div class="label">Code source - lien vérifié</div>
+    <a href="https://github.com/Bada123-creator/career-ai">https://github.com/Bada123-creator/career-ai</a>
+  </div>
+  <div class="linkBox" style="background:#15506a;">
+    <div class="label">Démo en ligne</div>
+    <a href="https://career-ai-mu-beige.vercel.app/">https://career-ai-mu-beige.vercel.app/</a>
+  </div>
+
+  <div class="callout" style="margin-top:14mm;">
+    <h3>Ce que ce projet démontre</h3>
+    <p>Autonomie, conception d'architecture web, maîtrise d'un stack full stack moderne, gestion de données, déploiement et capacité à faire évoluer un produit progressivement vers des fonctionnalités d'IA.</p>
+  </div>
+  <div class="footer"><span>Bada DIOP · Projet principal CareerAI</span><span>3 / 4</span></div>
+</section>
+
+<section class="page">
+  <div class="kicker">Autres réalisations</div>
+  <h2 class="sectionTitle">Des projets complémentaires qui montrent ma polyvalence</h2>
+  <div class="rule"></div>
+
+  <div class="projects">
+    <div class="projectCard">
+      <div class="type">Systèmes d'information</div>
+      <h3>PGI pour une PME</h3>
+      <p>Analyse des besoins, modélisation et développement d'un système de gestion intégré avec fonctionnalités métier et tests.</p>
+      <div class="chips"><span class="chip">Django</span><span class="chip">SI</span><span class="chip">Modélisation</span></div>
+      <p style="margin-top:9px;"><a href="https://github.com/Bada123-creator/PGI_PME">https://github.com/Bada123-creator/PGI_PME</a></p>
+    </div>
+
+    <div class="projectCard">
+      <div class="type">Application web</div>
+      <h3>GoodDoctor</h3>
+      <p>Application de prise de rendez-vous avec gestion des rôles, backend Django, base MySQL et interface Bootstrap.</p>
+      <div class="chips"><span class="chip">Django</span><span class="chip">MySQL</span><span class="chip">Bootstrap</span></div>
+      <p class="smallNote">Projet universitaire - pas de dépôt public indiqué.</p>
+    </div>
+
+    <div class="projectCard">
+      <div class="type">Data / graphes</div>
+      <h3>Réseau RATP - Open Data</h3>
+      <p>Nettoyage de données publiques, modélisation du réseau de transport sous forme de graphe et visualisation des nœuds et arêtes.</p>
+      <div class="chips"><span class="chip">Python</span><span class="chip">NetworkX</span><span class="chip">Gephi</span></div>
+      <p class="smallNote">Projet individuel - pas de dépôt public indiqué.</p>
+    </div>
+
+    <div class="projectCard">
+      <div class="type">Qualité logicielle</div>
+      <h3>Marmote - MDP</h3>
+      <p>Tests automatisés en C++ avec Google Test et analyse de couverture avec GCOV/LCOV sur un projet open source.</p>
+      <div class="chips"><span class="chip">C++</span><span class="chip">GTest</span><span class="chip">GCOV/LCOV</span></div>
+      <p class="smallNote">Contribution universitaire au projet Marmote.</p>
+    </div>
+  </div>
+
+  <div class="contactPanel">
+    <h3>Stage Data / Qualité - Upskill Handball</h3>
+    <p>Collecte, contrôle, normalisation et fiabilisation de données multi-sources. Cette expérience m'a appris qu'une application ou un système d'IA n'est fiable que si les données qui l'alimentent sont cohérentes, structurées et vérifiées.</p>
+  </div>
+
+  <div class="contactPanel" style="margin-top:8px;background:#f7fafc;border-left-color:#0e2747;">
+    <h3>Contact & GitHub</h3>
+    <p><a href="mailto:bada46218@gmail.com">bada46218@gmail.com</a> · <a href="tel:+33759445649">07 59 44 56 49</a></p>
+    <p><a href="https://github.com/Bada123-creator">https://github.com/Bada123-creator</a></p>
+  </div>
+  <div class="footer"><span>Bada DIOP · Candidature EEMI Lyon</span><span>4 / 4</span></div>
+</section>
+</body>
+</html>
